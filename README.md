@@ -1,6 +1,6 @@
-# clear-bank-test
+# Vuex form
 
-> A Vue.js project
+> A user query form built with Element UI, Vue and Vuex. 
 
 ## Build Setup
 
