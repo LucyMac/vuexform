@@ -6,9 +6,9 @@
         <p>Please fill the form below to submit your query.</p>
       </el-col>
     </el-row>
-    <el-row :gutter="40">          
+    <el-row :gutter="40">
       <el-col :span="10" :offset="2">
-        <el-form ref="userInput" :model="userInput" :rules="rules" label-position="top">
+        <el-form ref="userInput" :model="userInput" :rules="rules" label-position="top" label-width="150px">
           <el-form-item prop="firstName" label="First name">
             <el-input v-model="userInput.firstName"></el-input>
           </el-form-item>
@@ -22,12 +22,12 @@
             <el-input v-model="userInput.email"></el-input>
           </el-form-item>
           <el-row :gutter="40">
-            <el-col :span="8">
+            <el-col :span="6">
               <el-form-item prop="age" label="Age">
                 <el-input v-model.number="userInput.age"></el-input>
               </el-form-item>
             </el-col>      
-            <el-col :span="8">
+            <el-col :span="8" :offset="2">
               <el-form-item prop="dob" label="Date of birth">
                 <el-date-picker type="date" v-model="userInput.dob" format="dd-MM-yyyy" placeholder="Pick a date" width="100%"></el-date-picker>
               </el-form-item>
@@ -148,6 +148,7 @@ export default {
 </script>
 
 <style lang="scss">
+
 #form {
   font-family: system-ui, Helvetica, Arial, sans-serif;
   color: #2c3e50;
