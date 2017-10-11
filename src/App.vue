@@ -16,7 +16,7 @@
             <el-input v-model="userInput.lastName"></el-input>
           </el-form-item>
           <el-form-item prop="mobileNumber" label="Mobile number">
-            <el-input v-model.number="userInput.mobileNumber"></el-input>          
+            <el-input v-model="userInput.mobileNumber"></el-input>          
           </el-form-item>
           <el-form-item prop="email" label="Email">
             <el-input v-model="userInput.email"></el-input>
@@ -88,13 +88,13 @@ export default {
       noDataYet: true,
       rules: {
         firstName: [
-          { required: true, pattern: /[a-zA-Z\s]+/, message: 'Please provide your first name using only letters', trigger: 'blur' }
+          { required: true, pattern: /^[a-zA-Z]+$/, message: 'Please provide your first name using only letters', trigger: 'blur' }
         ],
         lastName: [
-          { required: true, pattern: /[a-zA-Z\s]+/, message: 'Please provide your surname using only letters', trigger: 'blur' }
+          { required: true, pattern: /^[a-zA-Z]+$/, message: 'Please provide your surname using only letters', trigger: 'blur' }
         ],
         mobileNumber: [
-          { required: true, type: 'number', message: 'Please provide your mobile number', trigger: 'blur' }
+          { required: true, message: 'Please provide your mobile number', trigger: 'blur' }
         ],
         email: [
           { required: true, type: 'email', message: 'Please provide a correct email address', trigger: 'blur' },
