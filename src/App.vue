@@ -37,7 +37,8 @@
             <el-input type="textarea" v-model="userInput.query" :autosize="{ minRows: 2, maxRows: 10}" placeholder="Type your query here..."></el-input>
           </el-form-item>
           <el-form-item class="form__buttons">
-            <el-button @click="clearFields">Clear</el-button>
+            <el-button @click="clearFields">Clear fields</el-button>
+            <el-button @click="clearStore">Clear store</el-button>
             <el-button type="primary" @click="submitForm" icon="check">Submit query</el-button>
           </el-form-item>
         </el-form>
@@ -49,7 +50,7 @@
           </div>
         </el-card>
         <el-card v-if="!noDataYet" class="box-card">
-          <div slot="header" class="clearfix">
+          <div v-if="submittedQuery.firstName" slot="header" class="clearfix">
             <h3>Thank you for getting in touch, {{submittedQuery.firstName}}.</h3>
           </div>
           <div class="text">
@@ -142,6 +143,9 @@ export default {
     },
     clearFields() {
       this.$data.userInput = {}
+    },
+    clearStore() {
+      this.$store.dispatch('updateUserInput', {})
     }
   }
 }
